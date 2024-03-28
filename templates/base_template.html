@@ -1,0 +1,552 @@
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" charset="UTF-8"> 
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,600&display=swap");
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1" charset="UTF-8"> 
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,600&display=swap");
+        
+
+        html { 
+        display: table;
+        width: 100vw;
+        }
+
+        body.battlescribe {
+          font-family: "Roboto Condensed";  
+          font-size: 12;
+          margin-right: auto;
+          margin-left: auto;
+          max-width: 1000px;
+        }
+        
+        ul {
+          list-style-type: none;
+          list-style-image: none;
+          list-style-position: outside;
+          padding: 0px;
+        }
+        
+  
+        div.battlescribe div.unit_table {
+          display: table;
+          width: auto;
+          margin-bottom: 35px;
+          margin-left: 25px;
+          margin-right: 25px;
+        }
+
+        div.battlescribe div.unit_data {
+          display: table-cell;
+          border: 1px #3d424a solid;
+          border-right: none;
+
+        }
+        
+        div.battlescribe div.unit_rules {
+            display: table-cell;
+            border: 1px #3d424a solid;
+            border-left: none;
+        }
+        
+  
+        div.battlescribe h2 {
+          font-family: "Roboto";
+          font-size: 8px;
+          text-align: center;
+          top: 0;
+          text-transform: uppercase;
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 20px;
+          padding-top: 10px;
+          border-bottom: 1px #e1ecf0 solid;
+          line-height: 1em;
+        }
+        div.battlescribe h3 {
+          display: none;
+        }
+        div.battlescribe h4 {
+          font-family: "Roboto";
+          font-size: 16;
+          font-weight: bold;
+          text-transform: uppercase;
+          text-align: left;
+          margin: 0px;
+          padding: 4px;
+          width: 100%;
+        }
+        
+        div.battlescribe table {
+          font-size: 12px;
+          width: 100%;
+          border-collapse: collapse;
+        }
+        
+  
+        div.battlescribe table.unit_data {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        div.battlescribe p.invuln_save {
+          font-size: 14;
+          font-weight: bold;
+          text-align: center;
+          letter-spacing: 0.5px;
+          margin: 2px;
+          margin-right: auto;
+          margin-left: auto;
+          font-variant: small-caps;
+          width: 100%;
+        }
+        
+        div.battlescribe p.fnp {
+          font-size: 14;
+          font-weight: bold;
+          text-align: center;
+          letter-spacing: 0.5px;
+          margin: 2px;
+          margin-right:auto;
+          margin-left:auto;
+          font-variant: small-caps;
+          text-transform: lowercase;
+          width: 100%;
+        }
+
+        div.battlescribe div.unit_data p:nth-child(odd) {
+          background-color: #d0dbeb;
+        }
+
+        div.battlescribe table.ranged_data, 
+        table.melee_data, 
+        table.abilities_data {
+          margin-bottom: 5px;
+        }
+  
+        div.battlescribe th {
+          font-family: "Roboto";
+          color: #ffffff;
+          background-color: #3d424a;
+          text-align: center;
+          text-transform:uppercase;
+          padding: 4px;
+          font-weight: bold;
+          text-wrap: balance;
+        }
+        div.battlescribe th:first-of-type {
+          padding-left: 10px;
+          text-align: left;
+        }
+        div.battlescribe th:last-of-type {
+          padding-right: 15px;
+        }
+        
+        div.battlescribe table.unit_data th {
+          padding-bottom: 5px;
+          padding-top: 5px;
+        }
+        div.battlescribe table.unit_data th:last-of-type {
+          padding-right: 5px;
+        }
+        div.battlescribe table.abilities_data th:last-of-type {
+          padding-right: 15px;
+        }
+  
+        tr:nth-child(even) {
+          background-color: #d0dbeb;
+        }
+        
+        div.battlescribe td {
+          text-align: center;
+          vertical-align: top;
+          padding: 4px;
+        }
+        div.battlescribe td:first-of-type {
+          padding-left: 10px;
+          text-align: left;
+          font-weight: bold;
+        }
+        div.battlescribe table.unit_data td {
+          padding-bottom: 8px;
+          padding-top: 8px;
+          font-weight: bold;
+        }
+        div.battlescribe table.abilities_data, table.detachment_abilities_data td {
+          text-align: left;
+        }
+
+        div.battlescribe table.detachment_abilities_data th {
+          text-wrap: balance;
+        }
+        /*div.battlescribe table.abilities_data td:first-of-type {
+          font-weight: bold;
+        }*/
+        div.battlescribe table.abilities_data td:last-of-type {
+          text-align: left;
+        }
+        
+        div.battlescribe h5 {
+          font-size:16px;
+          font-weight: bold;
+          text-transform: uppercase;
+          padding-left: 15px;
+          border-bottom: 1px #3d424a solid;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+        
+  
+        div.battlescribe div.unit_rules p {
+          font-family: "Roboto Condensed";
+          border-bottom: 1px #3d424a solid;
+          border-collapse: collapse;
+          margin: 0px;
+          padding: 4px;
+        }
+        div.battlescribe div.unit_rules p:first-of-type {
+          border-top: none;
+        }
+        div.battlescribe div.unit_rules p:last-of-type {
+          border-bottom: none;
+        }
+  
+        div.battlescribe div.keywords-details{
+          display: blocl;
+          width: 100%;
+          box-sizing: border-box;
+          border: 1px #3d424a solid;
+
+        }
+        div.battlescribe div.keywords-details p {
+          font-size: 8px;
+          margin: 0px;
+          padding: 0px;
+          padding-left: 4px;
+          border: none;
+        }
+        div.battlescribe div.keywords-details p:first-of-type {
+          margin-top: 3px;
+        }
+        div.battlescribe div.keywords-details p:last-of-type {
+          margin-bottom: 3px;
+        }
+        
+  
+        div.battlescribe div.army_rules {
+          border: 1px #3d424a solid;
+          display: table;
+          margin-bottom: 35px;
+          margin-left: 25px;
+          margin-right: 25px;
+        }
+        div.battlescribe div.army_rules p {
+          display: table-cell;
+          padding: 4px;
+          border-top: 1px #3d424a solid;
+          border-right: 1px #3d424a solid;
+          width: auto;
+
+        }
+
+        div.battlescribe div.army_rules p:last-of-type {
+          border-right: none;
+        }
+        
+  
+        div.battlescribe div.configuration {
+          border: 1px #3d424a solid;
+          margin-left: 25px;
+          margin-right: 25px;
+        }
+        div.battlescribe div.configuration li {
+          padding: 4px;
+          border-bottom: 1px #3d424a solid;
+        }
+  
+        div.battlescribe div.configuration li:last-of-type {
+          border-bottom: none;
+        }
+  
+        div.battlescribe div.configuration p {
+          margin: 0px;
+        }
+        
+  
+        div.battlescribe span.bold {
+          font-weight: bold;
+        }
+        div.battlescribe span.italic {
+          font-style: italic;
+        }
+        div.battlescribe span.caps {
+          font-variant: small-caps;
+          font-weight: bold;
+        }
+  
+        @media only print {
+        
+        body.battlescribe {
+          font-size: 10;
+          max-width: 790px;
+          margin: 0px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        div.battlescribe div.unit_table {
+          margin-left: 2px;
+          margin-right: 2px;
+          page-break-inside: avoid;
+        }
+
+        div.battlescribe div.unit_data {
+          max-height:100%;
+        }
+
+        div.battlescribe div.unit_rules {
+          width: auto;
+          max-height: 100%;
+        }
+        div.battlescribe h2 {
+          display: none;
+          font-size: 6px;
+        }
+        div.battlescribe h4 {
+          font-size: 14px;
+        }
+        div.battlescribe table {
+          font-size: 10px;
+        }
+        div.battlescribe table.unit_data {
+          font-size: 14px;
+        }
+        div.battlescribe p.invuln_save {
+          font-size: 12px;
+        }
+        div.battlescribe p.fnp {
+          font-size: 12px;
+        }
+        div.battlescribe h5 {
+          font-size: 14px;
+          padding: 4px;
+        }
+        div.battlescribe div.keywords-details p {
+          font-size: 7px;
+        }
+        div.battlescribe div.army_rules {
+          margin-left: 0px;
+          margin-right: 0px;
+          page-break-inside: avoid;
+        }
+        div.battlescribe div.configuration {
+          border: 1px #3d424a solid;
+          margin-left: 0px;
+          margin-right: 0px;
+          page-break-inside: avoid;
+        }
+        }
+
+
+@media screen and (max-width: 500px) {
+        html { 
+          display: table;
+          width: 100vw;}
+
+        body.battlescribe {
+          font-size: 12;
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        div.battlescribe div.unit_table {
+          display: table;
+          max-width: 100%;
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+
+        div.battlescribe div.unit_data {
+          display: table-cell;
+          width: 100%;
+          border-left: none;
+
+        }
+        
+        div.battlescribe div.unit_rules {
+          display: table-row;
+          width: 100%;
+        }
+        
+
+        div.battlescribe h2 {
+          display: none;
+          font-size: 14px;
+        }
+        div.battlescribe h4 {
+          font-size: 20px;
+        }
+        div.battlescribe table {
+          font-size: 13px;
+        }
+        div.battlescribe table.unit_data {
+          font-size: 18px;
+        }
+        div.battlescribe p.invuln_save {
+          font-size: 18px;
+        }
+        div.battlescribe p.fnp {
+          font-size: 18px;
+        }
+        div.battlescribe h5 {
+          font-size: 20px;
+          padding: 4px;
+
+        }
+        div.battlescribe div.unit_rules p {
+          font-family: "Roboto Condensed";
+          border-bottom: 1px #3d424a solid;
+          border-collapse: collapse;
+          margin: 0px;
+          padding: 4px;
+        }
+        div.battlescribe div.keywords-details{
+          border: 1px #3d424a solid;
+        }
+
+        div.battlescribe div.keywords-details p {
+          font-size: 10px;
+        }
+
+        div.battlescribe div.army_rules {
+          border: 1px #3d424a solid;
+          display: table;
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+        
+        div.battlescribe div.army_rules p {
+          padding: 4px;
+          border-top: 1px #3d424a solid;
+        }
+
+        div.battlescribe div.army_rules p:last-of-type {
+          border-right: unset;
+        }
+
+        div.battlescribe div.configuration {
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+      </style>
+</head> 
+<body class="battlescribe">
+    <div class="battlescribe">
+      <ul>
+
+
+        {% for force in master_dict.keys() %}
+
+        <li class="force">
+          <h2>{{ force }}</h2>
+          <ul>
+
+            {% for unit in master_dict[force]['units'] %}
+
+            <div class="unit_table">
+              <li class="rootselection">
+                <h4>{{ unit }}</h4>
+                <div class="unit_data">
+                  
+                  {{ unit_table_dict[unit] }}
+
+                  {% if unit in invuln_dict.keys() %} <p class="invuln_save">invulnerable save {{ invuln_dict[unit] }}</p> {% else %} <br/>{% endif %}
+
+                  {% if unit in feel_no_pain_dict.keys() %} <p class="fnp">{{ feel_no_pain_dict[unit] }}</p> {% endif %}
+
+
+                  {% if unit in ranged_table_dict.keys() %} {{ ranged_table_dict[unit] }} {% endif %}
+
+
+                  {% if unit in melee_table_dict.keys() %} {{ melee_table_dict[unit] }} {% endif %}
+
+
+                  {% if unit in abilities_table_dict.keys() %} {{ abilities_table_dict[unit] }} {% endif %}
+
+
+                  {% for detachment_abilities in detachment_abilities_dict[force] %} {{ detachment_abilities }} {% endfor %}
+
+                </div>
+
+                {% if unit in unit_rules_dict.keys() %}
+                <div class="unit_rules">
+                  <h5>Unit Rules</h5>
+                      
+                  {% for rules in unit_rules_dict[unit] %}  
+                    
+                  {{ rules_dict[rules] }}
+
+                  {% endfor %}
+
+                  {% for rules in detachment_rules_dict[force] %}
+
+                  {{ rules_dict[rules] }}
+
+                  {% endfor %}
+
+                </div>
+                {% endif %}
+
+
+                <div class="keywords-details">
+
+                  {{ keywords_dict[unit]|join('') }}
+
+                  {% if unit in sub_keywords_dict.keys() %} 
+                    {% for group in sub_keywords_dict[unit] %}
+                  <p>{{ group }}</p>{% endfor %} {% endif %}
+
+                </div>
+              </li>
+            </div>
+
+            {% endfor %}
+
+          <li class="category">
+            <h3>Army Rules</h3>
+            <ul>
+              <div class="army_rules">
+                <li>
+                <h4>{{ force }} Rules</h4>
+                  {% for rules in faction_rules_dict[force] %}
+
+                  {{ faction_rules_dict[force][rules]}}
+
+                  {% endfor %}
+
+
+                  {% for rules in detachment_rules_dict[force] %}
+
+                  {{ rules_dict[rules] }}
+
+                  {% endfor %}
+
+                </li>
+              </div>
+            </ul>
+          </li>
+          <div class="configuration">
+          {{ configuration_block_dict[force] }}    
+          </div>
+        </ul>
+        </li>
+
+        {% endfor %}
+
+
+       </ul>
+    </div>
+  </body>
+</html>
