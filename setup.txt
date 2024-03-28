@@ -1,2 +1,0 @@
-pip3 install htmlparser
-pip3 install beautifulsoup4
