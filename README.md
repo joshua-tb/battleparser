@@ -7,7 +7,7 @@ How To Use BattleParser:
 1: Create an Army Roster using BattleScribe\
 2: Export Army Roster in HTML format\
 3: Launch battleparser.py\
-4: When prompted, provide the path to your HTML Army Roster (path does not require quotes or escaping of special characters)\
+4: When prompted, provide the path to your HTML Army Roster (path does not require quotes or escaping of special characters)
 
 The re-formatted Army Roster will be saved in the same directory as the source file. It will have the same name with "_modified.html" appended, eg 'my-roster.html_modified.html'.
 
