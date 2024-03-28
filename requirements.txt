@@ -1,0 +1,5 @@
+beautifulsoup4
+htmlparser
+html5lib
+jinja2
+lxml
