@@ -193,7 +193,7 @@ for force in master_dict:
             for rules in detachment_rules_dict[working_force]:
                 if rules in unit_rules_dict[unit]:
                     rule_index = unit_rules_dict[unit].index(rules)
-                    #unit_rules_dict[unit].pop(rule_index)
+                    unit_rules_dict[unit].pop(rule_index)
     for name,rule in rules_dict.items():
         rule_string = str(rule)
         if 'If your Army Faction is' in rule_string:
